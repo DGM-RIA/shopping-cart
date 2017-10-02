@@ -13,6 +13,12 @@
         $_SESSION["potatoGun"] += 1;
     }
 
+    $price = 250;
+    $tax = 10 * $_SESSION["potatoGun"];
+    $shipping = 3;
+
+    $totalCost = ($price * $_SESSION['potatoGun']) + $tax + $shipping;
+
     /*$whereIn = implode(',', $_SESSION['cart']);
 
     $sql = "SELECT * FROM products WHERE id IN (1)";*/
@@ -89,6 +95,19 @@
 
                     <input type="submit" value="Add">
                     <input type="submit" value="Delete">
+
+                            <?php
+                                echo "<p>TOTAL COST: $";
+                                print_r($totalCost);
+                                echo ".00</p>";
+
+                                echo "<p>Including $";
+                                print_r($tax);
+                                echo ".00 for tax and $";
+                                print_r($shipping);
+                                echo ".00 for shipping.</p>";
+                            ?>
+
                     </div>
 
                     
