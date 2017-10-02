@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -54,7 +53,17 @@
             <div class="col-xs-12 col-sm-6 col-sm-offset-3">
                 
                 <h2>You can expect your Potato gun to arrive in the next week. Contact us if you have any questions.</h2>
-                    
+                
+                <pre style="color: black;">
+                    <?php
+                        echo 'hi';
+                        echo $_REQUEST['Bfirstname'];
+                        print_r($_REQUEST);
+
+
+                    ?>
+                </pre>
+
             </div>            
         </div>
 

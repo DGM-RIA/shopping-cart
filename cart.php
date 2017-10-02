@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+
+<?php 
+    
+    session_start();
+
+    if (empty($_SESSION['potatoGun'])) {
+        $_SESSION["potatoGun"] = 0;
+    }
+
+
+    if($_GET['id'] == 1) {
+        $_SESSION["potatoGun"] += 1;
+    }
+
+    /*$whereIn = implode(',', $_SESSION['cart']);
+
+    $sql = "SELECT * FROM products WHERE id IN (1)";*/
+
+?>
+
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -59,7 +80,9 @@
                     </div>
 
                     <div class="col-xs-9">
-                        <p>Here we'll need to pull the cart information up for the item and display the quantity</p>
+                            <?php
+                                echo "<p>You have ".$_SESSION["potatoGun"]." potato gun(s) in your cart.</p>";
+                            ?>
 
                         <label>Add or remove item amount:
                     <input type="number" name="quantity" min="1" max="5"></label>

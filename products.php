@@ -66,13 +66,11 @@
                 <h3>$250.00</h3> 
                 <h6>(plus $3.00 flat rate shipping and $10 flat rate tax)</h6>
 
-                <button>Add to Cart</button>
+                <a href="cart.php?id=1"><button>Add to Cart</button></a>
             </div>
         </div>
 
         
-
-
 
 
 
