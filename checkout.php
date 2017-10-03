@@ -1,4 +1,30 @@
 <!DOCTYPE html>
+
+
+<?php 
+    
+    session_start();
+
+    if (empty($_SESSION['potatoGun'])) {
+        $_SESSION["potatoGun"] = 0;
+    } //this initializes the SESSION potatoGun variable if the cart is empty
+
+
+    $price = 250;
+    $tax = 10 * $_SESSION["potatoGun"];
+    $shipping = 3;
+
+    $totalCost = ($price * $_SESSION['potatoGun']) + $tax + $shipping;
+
+
+
+    /*$whereIn = implode(',', $_SESSION['cart']);
+
+    $sql = "SELECT * FROM products WHERE id IN (1)";*/
+
+?>
+
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -107,7 +133,17 @@
                     <label>Expiration Date:<br>
                     <input type="date" name="expire" value="09/21/2017"></label>
 
-                    <h3>TOTAL COST: $0.00</h3>
+                    <?php
+                        echo "<h3>TOTAL COST: $";
+                        print_r($totalCost);
+                        echo ".00</p>";
+
+                        echo "<p>Including $";
+                        print_r($tax);
+                        echo ".00 for tax and $";
+                        print_r($shipping);
+                        echo ".00 for shipping.</h3>";
+                    ?>
 
                     <br><br>
 

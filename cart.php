@@ -4,20 +4,41 @@
     
     session_start();
 
+
+    $updatedAmount = $_POST[changeAmount]; //value of cart item button clicked
+
     if (empty($_SESSION['potatoGun'])) {
         $_SESSION["potatoGun"] = 0;
-    }
+    } //this initializes the SESSION potatoGun variable if the cart is empty
 
 
     if($_GET['id'] == 1) {
         $_SESSION["potatoGun"] += 1;
+    } //this adds 1 to the potatoGun value as the id is pulled from the URL stream
+
+
+    if($updatedAmount == "Add One") {
+        $_SESSION["potatoGun"] += 1;
     }
+    if($updatedAmount == "Delete One") {
+        $_SESSION["potatoGun"] -= 1;
+    }
+    if($updatedAmount == "Empty Cart") {
+        $_SESSION["potatoGun"] = 0;
+    }
+    if($_SESSION['potatoGun'] < 0) {
+        $_SESSION['potatoGun'] = 0;
+    }
+
+
 
     $price = 250;
     $tax = 10 * $_SESSION["potatoGun"];
     $shipping = 3;
 
     $totalCost = ($price * $_SESSION['potatoGun']) + $tax + $shipping;
+
+
 
     /*$whereIn = implode(',', $_SESSION['cart']);
 
@@ -79,7 +100,7 @@
 
     	<div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                <form action="<?php $SERVER['PHP_SELF']; ?>" method="POST" name="cartForm">  
+                <form action="cart.php" method="POST" name="cartForm">  
 
                     <div class="col-xs-3">
                         <img class="productImage" src="img/spudato.jpg">
@@ -90,11 +111,11 @@
                                 echo "<p>You have ".$_SESSION["potatoGun"]." potato gun(s) in your cart.</p>";
                             ?>
 
-                        <label>Add or remove item amount:
-                    <input type="number" name="quantity" min="1" max="5"></label>
+                        <label>Add or remove item:
 
-                    <input type="submit" value="Add">
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Add One" name="changeAmount">
+                    <input type="submit" value="Delete One" name="changeAmount">
+                    <input type="submit" value="Empty Cart" name="changeAmount">
 
                             <?php
                                 echo "<p>TOTAL COST: $";
