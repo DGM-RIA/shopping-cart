@@ -24,6 +24,22 @@
 
 ?>
 
+//<?php
+//    session_start();
+//
+//    $fbuid = htmlspecialchars($_REQUEST["fbuid"]);
+//
+//    $_SESSION["fbuid"] = $fbuid;
+//        if(intval($fbuid) == 0){
+//            header("Location: ../");
+//    }
+//
+//    echo "<img style='max-height:100px;' src='https://graph.facebook.com/$fbuid/picture?type=large'>  User Id: " . $fbuid . "<br>";
+//?>
+<?php
+    require_once("./stripe/config.php");
+?>
+
 
 <html lang="en">
   <head>
@@ -148,7 +164,22 @@
                     <br><br>
 
 
-                    <input type="submit" value="Submit">
+                    <!-- Stripe API -->
+                    <h1>Payment</h1>
+
+                    <form action="charge.php" method="POST" class="paymentButton">
+                        <script
+                            type="text/javascript"
+                            src="https://checkout.stripe.com/checkout.js"
+                            class="stripe-button"
+                            data-key="<?php echo $stripe['publishable_key'];?>"
+                            data-name="Payment"
+                            data-description="Spud Shoooter"
+                            data-image="./img/spudato.jpg"
+                            data-amount="<?php echo $totalCost * 100 ?>"
+                            data-locale="auto"
+                      ></script>
+                    </form>
                     
 
                 </form>
@@ -158,7 +189,7 @@
         <br><br>
 
 
-        
+
 
 
 
