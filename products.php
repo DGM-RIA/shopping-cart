@@ -1,3 +1,13 @@
+<?php
+require_once('connection.php');
+//database connection
+$query = "SELECT * FROM products WHERE is_active=1 ORDER BY name";
+
+$result= mysqli_query($con, $query) or die('Query Failed');
+
+mysqli_close($con);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,15 +69,18 @@
             <div class="col-xs-12 col-sm-5 col-sm-offset-1">
                 <img class="productImage" src="img/spudato.jpg">
             </div>
+            <?php
+            while($data = mysqli_fetch_array($result)){
+            echo '<div class="col-xs-12 col-sm-5">';
+            echo '<h3>'.$data['name'].'</h3>';
+            echo '<p>Here is some words about this cool potato gun we have and that you should buy. Its real neat, we promise!</p>';
+            echo '<h3>'.$data['price'].'</h3>'; 
+            echo '<h6>(plus $3.00 flat rate shipping and $10 flat rate tax)</h6>';
 
-            <div class="col-xs-12 col-sm-5">
-                <h3>Spud-ato Launcher</h3>
-                <p>Here is some words about this cool potato gun we have and that you should buy. It's real neat, we promise!</p>
-                <h3>$250.00</h3> 
-                <h6>(plus $3.00 flat rate shipping and $10 flat rate tax)</h6>
-
-                <a href="cart.php?id=1"><button>Add to Cart</button></a>
-            </div>
+            echo '<a href="cart.php?id=1"><button>Add to Cart</button></a>';
+            echo '</div>';
+        };
+        ?>
         </div>
 
         

@@ -24,7 +24,7 @@
 
 ?>
 
-//<?php
+<?php
 //    session_start();
 //
 //    $fbuid = htmlspecialchars($_REQUEST["fbuid"]);
