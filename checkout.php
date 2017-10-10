@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-
-
-<?php 
-    
+<?php
     session_start();
 
     if (empty($_SESSION['potatoGun'])) {
@@ -24,22 +20,11 @@
 
 ?>
 
-//<?php
-//    session_start();
-//
-//    $fbuid = htmlspecialchars($_REQUEST["fbuid"]);
-//
-//    $_SESSION["fbuid"] = $fbuid;
-//        if(intval($fbuid) == 0){
-//            header("Location: ../");
-//    }
-//
-//    echo "<img style='max-height:100px;' src='https://graph.facebook.com/$fbuid/picture?type=large'>  User Id: " . $fbuid . "<br>";
-//?>
 <?php
     require_once("./stripe/config.php");
 ?>
 
+<!DOCTYPE html>
 
 <html lang="en">
   <head>
@@ -140,14 +125,14 @@
 
                     <hr><br>
 
-                    <label>Card Number:<br>
+                    <!-- <label>Card Number:<br>
                     <input type="text" name="creditcard" value="6011 0000 1111 2222"></label>
 
                     <label>CVV:<br>
                     <input type="text" name="cvv" value="123"></label>
 
                     <label>Expiration Date:<br>
-                    <input type="date" name="expire" value="09/21/2017"></label>
+                    <input type="date" name="expire" value="09/21/2017"></label> -->
 
                     <?php
                         echo "<h3>TOTAL COST: $";

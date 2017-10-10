@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<?php 
-    
+<?php
     session_start();
 
 
@@ -45,7 +42,7 @@
     $sql = "SELECT * FROM products WHERE id IN (1)";*/
 
 ?>
-
+<!DOCTYPE html>
 
 <html lang="en">
   <head>
@@ -140,7 +137,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                <button>Checkout Items</button>
+                <a href="checkout.php"><button>Checkout Items</button></a>
             </div>
         </div>
 
