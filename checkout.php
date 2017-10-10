@@ -23,6 +23,18 @@
 
 // STRIPE
 <?php
+//    session_start();
+//
+//    $fbuid = htmlspecialchars($_REQUEST["fbuid"]);
+//
+//    $_SESSION["fbuid"] = $fbuid;
+//        if(intval($fbuid) == 0){
+//            header("Location: ../");
+//    }
+//
+//    echo "<img style='max-height:100px;' src='https://graph.facebook.com/$fbuid/picture?type=large'>  User Id: " . $fbuid . "<br>";
+//?>
+<?php
     require_once("./stripe/config.php");
 ?>
 
