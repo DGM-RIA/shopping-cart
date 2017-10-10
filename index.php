@@ -41,7 +41,7 @@
 
 
     <!--MAIN CONTENT-->
-    <div class="container">
+    <div class="container bannerImg">
     	<div class="row">
     		<div class="col-xs-12">
     			<h1>Spud Shooters Deluxe</h1>

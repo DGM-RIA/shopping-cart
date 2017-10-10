@@ -16,6 +16,13 @@ body {
 	margin-bottom: 100px;
 }
 
+.bannerImg{
+	background-image: url("../img/potatoes.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 button {
 	width: 100%;
 	color: #874300;

@@ -20,6 +20,8 @@
 
 ?>
 
+
+// STRIPE
 <?php
     require_once("./stripe/config.php");
 ?>
@@ -149,8 +151,8 @@
                     <br><br>
 
 
-                    <!-- Stripe API -->
-                    <h1>Payment</h1>
+                    <!-- STRIPE API -->
+                    <h2>Payment</h2>
 
                     <form action="charge.php" method="POST" class="paymentButton">
                         <script
