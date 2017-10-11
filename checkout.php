@@ -21,8 +21,9 @@
 ?>
 
 
-// STRIPE
-<?php
+
+<!-- STRIPE
+ <?php
 //    session_start();
 //
 //    $fbuid = htmlspecialchars($_REQUEST["fbuid"]);
@@ -33,7 +34,7 @@
 //    }
 //
 //    echo "<img style='max-height:100px;' src='https://graph.facebook.com/$fbuid/picture?type=large'>  User Id: " . $fbuid . "<br>";
-//?>
+//?> -->
 <?php
     require_once("./stripe/config.php");
 ?>
