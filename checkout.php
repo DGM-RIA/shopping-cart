@@ -20,21 +20,6 @@
 
 ?>
 
-
-
-<!-- STRIPE
- <?php
-//    session_start();
-//
-//    $fbuid = htmlspecialchars($_REQUEST["fbuid"]);
-//
-//    $_SESSION["fbuid"] = $fbuid;
-//        if(intval($fbuid) == 0){
-//            header("Location: ../");
-//    }
-//
-//    echo "<img style='max-height:100px;' src='https://graph.facebook.com/$fbuid/picture?type=large'>  User Id: " . $fbuid . "<br>";
-//?> -->
 <?php
     require_once("./stripe/config.php");
 ?>
@@ -140,6 +125,8 @@
 
                     <hr><br>
 
+                    <input type="hidden" name="is_active_order" value="1">
+
                     <!-- <label>Card Number:<br>
                     <input type="text" name="creditcard" value="6011 0000 1111 2222"></label>
 
@@ -164,8 +151,8 @@
                     <br><br>
 
 
-                    <!-- STRIPE API -->
-                    <h2>Payment</h2>
+                    <!-- Stripe API -->
+                    <h1>Payment</h1>
 
                     <form action="charge.php" method="POST" class="paymentButton">
                         <script
