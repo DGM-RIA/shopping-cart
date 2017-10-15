@@ -1,3 +1,28 @@
+<?php
+require_once('connection.php');
+//database connection
+$feedback = '<p><a href="index.php">Create an account</a></p>';
+
+if (isset($_POST['submit'])) {
+  $email = mysqli_real_escape_string($con, trim($_POST[email]));
+  $pass1 = mysqli_real_escape_string($con, trim($_POST[pass1]));
+
+  $query = "SELECT * FROM users WHERE email ='$email' AND password = SHA('$pass1')";
+  $data = mysqli_query($con, $query) or die('query failed');
+
+  if (mysqli_num_rows($data) == 1) {
+    $row = mysqli_fetch_array($data);
+
+      setcookie('email', $row['email'], time() + (60*60*24*30));
+
+      header('Location:orders.php');
+    
+  }else{
+      $feedback = '<p>Could not find an account for '. $_POST['email'].'. <a href="register.php">Create an account</a></p>';
+  }//end else
+}//end isset (post)
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,26 +73,17 @@
     			<hr>
     		</div>
     	</div>
-
-
     	<div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                <form action="orders.php" method="POST" name="loginForm">  
-
-
+                <form action="admin.php" method="POST" name="loginForm">
                     <h2>Please Sign In</h2>
                     <label>Username:<br>
-                    <input type="text" name="username" value="BobShmo101"></label>
-
+                    <input type="text" name="email" value="BobShmo101@me.com"></label>
                     <label>Password:<br>
-                    <input type="text" name="password" value="test123"></label>          
-                    
-
-
-                    <input type="submit" value="Log In">
-                    
-
+                    <input type="text" name="pass1" value="test123"></label>
+                    <input type="submit" value="Log In" name="submit">
                 </form>
+                <?php echo $feedback; ?>
             </div>            
         </div>
 

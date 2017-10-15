@@ -74,7 +74,7 @@ mysqli_close($con);
             echo '<div class="col-xs-12 col-sm-5">';
             echo '<h3>'.$data['name'].'</h3>';
             echo '<p>Here is some words about this cool potato gun we have and that you should buy. Its real neat, we promise!</p>';
-            echo '<h3>'.$data['price'].'</h3>'; 
+            echo '<h3>$'.$data['price'].'</h3>'; 
             echo '<h6>(plus $3.00 flat rate shipping and $10 flat rate tax)</h6>';
 
             echo '<a href="cart.php?id=1"><button>Add to Cart</button></a>';
