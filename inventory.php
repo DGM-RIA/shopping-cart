@@ -40,6 +40,7 @@ require_once('security.php');
 	      <li><a href="admin.php">Admin Panel</a></li>
         <li><a href="orders.php">Orders</a></li>
         <li class="active"><a href="inventory.php">Inventory</a></li>
+        <li><a href="logout.php">Logout</a></li>
 	    </ul>
 	  </div>
 	</nav>
