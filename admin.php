@@ -1,5 +1,6 @@
 <?php
 require_once('connection.php');
+session_start();
 //database connection
 $feedback = '<p><a href="index.php">Create an account</a></p>';
 
@@ -13,7 +14,8 @@ if (isset($_POST['submit'])) {
   if (mysqli_num_rows($data) == 1) {
     $row = mysqli_fetch_array($data);
 
-      setcookie('email', $row['email'], time() + (60*60*24*30));
+      //setcookie('email', $row['email'], time() + (60*60*24*30));
+    $_SESSION['login'] = $email;
 
       header('Location:orders.php');
     
