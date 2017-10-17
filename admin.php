@@ -1,12 +1,17 @@
 <?php
 require_once('connection.php');
 session_start();
+function d($debug){
+    echo '<pre>';
+    print_r($debug);
+    echo "</pre>";
+}
 //database connection
 $feedback = '<p><a href="index.php">Create an account</a></p>';
 
 if (isset($_POST['submit'])) {
-  $email = mysqli_real_escape_string($con, trim($_POST[email]));
-  $pass1 = mysqli_real_escape_string($con, trim($_POST[pass1]));
+  $email = mysqli_real_escape_string($con, trim($_POST['email']));
+  $pass1 = mysqli_real_escape_string($con, trim($_POST['pass1']));
 
   $query = "SELECT * FROM users WHERE email ='$email' AND password = SHA('$pass1')";
   $data = mysqli_query($con, $query) or die('query failed');
@@ -16,7 +21,6 @@ if (isset($_POST['submit'])) {
 
       //setcookie('email', $row['email'], time() + (60*60*24*30));
     $_SESSION['login'] = $email;
-
       header('Location:orders.php');
     
   }else{
