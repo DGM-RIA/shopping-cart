@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,13 +32,16 @@
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="index.php">Spuds R' Us</a>
 	    </div>
-	    <ul class="nav navbar-nav">
+        <?php
+            require_once('nav.php');
+        ?>
+	    <!-- <ul class="nav navbar-nav">
 	      <li class="active"><a href="index.php">Home</a></li>
 	      <li><a href="products.php">Products</a></li>
 	      <li><a href="cart.php">Cart</a></li>
 	      <li><a href="checkout.php">Checkout</a></li>
 	      <li><a href="admin.php">Admin Panel</a></li>
-	    </ul>
+	    </ul> -->
 	  </div>
 	</nav>
 

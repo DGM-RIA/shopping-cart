@@ -2,7 +2,7 @@
     session_start();
 
 
-    $updatedAmount = $_POST[changeAmount]; //value of cart item button clicked
+    $updatedAmount = $_POST['changeAmount']; //value of cart item button clicked
 
     if (empty($_SESSION['potatoGun'])) {
         $_SESSION["potatoGun"] = 0;
@@ -104,9 +104,9 @@
                     </div>
 
                     <div class="col-xs-9">
-                            <?php
-                                echo "<p>You have ".$_SESSION["potatoGun"]." potato gun(s) in your cart.</p>";
-                            ?>
+                        <?php
+                            echo "<p>You have ".$_SESSION["potatoGun"]." potato gun(s) in your cart.</p>";
+                        ?>
 
                         <label>Add or remove item:
 

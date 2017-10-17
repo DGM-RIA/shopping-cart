@@ -56,13 +56,9 @@
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="index.php">Spuds R' Us</a>
 	    </div>
-	    <ul class="nav navbar-nav">
-	      <li><a href="index.php">Home</a></li>
-	      <li><a href="products.php">Products</a></li>
-	      <li><a href="cart.php">Cart</a></li>
-	      <li class="active"><a href="checkout.php">Checkout</a></li>
-	      <li><a href="admin.php">Admin Panel</a></li>
-	    </ul>
+	    <?php
+            require_once('nav.php');
+        ?>
 	  </div>
 	</nav>
 
