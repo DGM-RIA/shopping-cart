@@ -7,7 +7,7 @@ function d($debug){
     echo "</pre>";
 }
 //database connection
-$feedback = '<p><a href="index.php">Create an account</a></p>';
+$feedback = '<p><a href="register.php">Create an account</a></p>';
 
 if (isset($_POST['submit'])) {
   $email = mysqli_real_escape_string($con, trim($_POST['email']));
